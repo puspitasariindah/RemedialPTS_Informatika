@@ -47,7 +47,6 @@ const siswaData = {
             { noAbsen: 34, nama: 'SYARIF KHOIRUL RIFA' },
             { noAbsen: 35, nama: 'TENGKU AHMAD ABID KHOIRI' },
             { noAbsen: 36, nama: 'TYAGA AXELLATIO FATHIRIZQI APRIYANTO' }
-                            
         ],
         "10 RPL B": [
             { noAbsen: 1, nama: 'AHMAD SATRIA HASUGIAN' },
