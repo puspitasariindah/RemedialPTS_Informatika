@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Online</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include CSS -->
+</head>
+<body>
+
+    <h1>Ujian Online</h1>
+
+    <!-- Form untuk No Absen dan Nama Lengkap -->
+    <div class="form-section">
+        <label for="kelas">Kelas:</label>
+        <select id="kelas" onchange="pilihKelas()" required>
+            <option value="" disabled selected>Pilih Kelas</option>
+            <option value="11 RPL A">11 RPL A</option>
+            <option value="11 RPL B">11 RPL B</option>
+        </select>
+        <br><br>
+
+        <label for="siswa">Nama Siswa:</label>
+        <select id="siswa" required>
+            <option value="" disabled selected>Pilih Nama Siswa</option>
+        </select>
+        <br><br>
+
+        <button onclick="startExam()">Mulai Ujian</button>
+    </div>
+
+    <!-- Timer Section -->
+    <div class="timer-section" id="timerSection" style="display: none;">
+        <h2>Timer: <span id="timer">20:00</span></h2>
+    </div>
+
+    <!-- Soal Section -->
+    <div class="soal-section" id="soalSection" style="display: none;">
+        <h2>Soal Ujian</h2>
+
+        <div class="soal">
+            <p>1.   Data berasal dari bahasa latin, yaitu: <br>
+                <label><input type="radio" name="soal1" value="a"> A. Opini</label><br>
+                <label><input type="radio" name="soal1" value="b"> B. Data</label><br>
+                <label><input type="radio" name="soal1" value="c"> C. Datum</label><br>
+                <label><input type="radio" name="soal1" value="d"> D. Date</label><br>
+                <label><input type="radio" name="soal1" value="e"> E. Autum</label><br>
+            </p>
+        </div>
+
+        <div class="soal"> 
+            <p>2.   Di bawah ini yang bukan merupakan manfaat dan fungsi data adalah?<br>
+                <img class="soal-image" src="C:\Users\Asus\OneDrive\Documents\Projek-web\gambar\2.JPG"> <br>
+                <label><input type="radio" name="soal2" value="a"> A. Acuan Kegiatan.</label><br>
+                <label><input type="radio" name="soal2" value="b"> B. Koleksi</label><br>
+                <label><input type="radio" name="soal2" value="c"> C. Dasar kegiatan</label><br>
+                <label><input type="radio" name="soal2" value="d"> D. Bahan Evaluasi</label><br>
+                <label><input type="radio" name="soal2" value="e"> E. Semua Jawaban Salah</label><br>
+            </p>
+        </div>
+
+
+        <div class="soal"> 
+            <p>3.   kumpulan informasi atau keterangan-keterangan yang diperoleh dari pengamatan, informasi tersebut bisa berupa karakter, teks kata, angka, gambar, suara atau video<br>
+            <label><input type="radio" name="soal3" value="a"> A.   Informasi</label><br>
+            <label><input type="radio" name="soal3" value="b"> B.   Pesan</label><br>
+            <label><input type="radio" name="soal3" value="c"> C.   Media</label><br>
+            <label><input type="radio" name="soal3" value="d"> D.   Fakta</label><br>
+            <label><input type="radio" name="soal3" value="e"> E.   Data</label><br>
+            </p>
+  
+        </div>
+
+        <div class="soal"> 
+            <p>4.   Jenis data berdasarkan sumbernya di bagi menjadi 2 yaitu data primer dan data sekunder. Di bawah ini yang merupakan contoh data primer, kecuali <br>
+            <label><input type="radio" name="soal4" value="a"> A.   Observasi, wawancara, diskusi</label><br>
+            <label><input type="radio" name="soal4" value="b"> B.   Terfokus, jurnal, penyebaran kuesioner</label><br>
+            <label><input type="radio" name="soal4" value="c"> C.   Observasi, terfokus, diskusi</label><br>
+            <label><input type="radio" name="soal4" value="d"> D.   Observasi, wawancara, penyebaran kuesioner</label><br>
+            <label><input type="radio" name="soal4" value="e"> E.   Terfokus, diskusi, wawancara</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+            <p>5.  Perhatikan gambar.5. Jenis data berdsarkan sumbernya di bagi menjadi 2 yaitu data primer dan data sekunder. Di bawah ini yang merupakan contoh data sekunder, kecuali<br>
+            <label><input type="radio" name="soal5" value="a"> A.   Buku, laporan, wawancara</label><br>
+            <label><input type="radio" name="soal5" value="b"> B.   Publikasi, laporan, buku</label><br>
+            <label><input type="radio" name="soal5" value="c"> C.   Biro statistik, laporan, jurnal</label><br>
+            <label><input type="radio" name="soal5" value="d"> D.   Jurnal, wawancara, buku</label><br>
+            <label><input type="radio" name="soal5" value="e"> E.   Semua Salah</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+            <p>6.   Berdasarkan sifat karakteristik  yang di ukur data di bagi menjadi dua yaitu data kualitatif dan data kuantitatif. Berikut yang merupakan data kualitatif, kecuali <br>
+            <label><input type="radio" name="soal6" value="a"> A.   Data jenis kelamin : Laki-laki, perempuan</label><br>
+            <label><input type="radio" name="soal6" value="b"> B.   Data Produk : Baik, Rusak</label><br>
+            <label><input type="radio" name="soal6" value="c"> C.   Nilai : Istimewa, bagus, cukup</label><br>
+            <label><input type="radio" name="soal6" value="d"> D.   Pekerjaan : Guru, siswa, karyawan swasta</label><br>
+            <label><input type="radio" name="soal6" value="e"> E.   Jumlah siswa dikelas : 36, 34, 35</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+            <p>7.   Terdapat beberapa kriteria yang digunakan untuk menilai validitas sumber data, kecuali<br>
+            <label><input type="radio" name="soal7" value="a"> A.   Akurasi </label><br>
+            <label><input type="radio" name="soal7" value="b"> B.   Relevansi</label><br>
+            <label><input type="radio" name="soal7" value="c"> C.   Terdepan</label><br>
+            <label><input type="radio" name="soal7" value="d"> D.   Keandalan</label><br>
+            <label><input type="radio" name="soal7" value="e"> E.   Aktualitas</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+            <p>8.   Berdasarkan cara pengumpulan, jenis data di bagi menjadi dua yaitu data primer dan data sekunder. Yang merupakan contoh sumber data primer kecuali<br>
+            <label><input type="radio" name="soal8" value="a"> A.   Kuesioner </label><br>
+            <label><input type="radio" name="soal8" value="b"> B.   Wawancara</label><br>
+            <label><input type="radio" name="soal8" value="c"> C.   statistik</label><br>
+            <label><input type="radio" name="soal8" value="d"> D.   Observasi</label><br>
+            <label><input type="radio" name="soal8" value="e"> E.   Eksperimen</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+            <p>9.   Syarat – syarat data yang baik, kecuali<br>
+            <label><input type="radio" name="soal9" value="a"> A.   Obyektif </label><br>
+            <label><input type="radio" name="soal9" value="b"> B.   Representatif</label><br>
+            <label><input type="radio" name="soal9" value="c"> C.   Memiliki standar error yang kecil</label><br>
+            <label><input type="radio" name="soal9" value="d"> D.   Relevan</label><br>
+            <label><input type="radio" name="soal9" value="e"> E.   Subyektif</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+            <p>10.  Berikut aspek privasi dalam pengumpulan data, kecuali<br>
+            <label><input type="radio" name="soal10" value="a"> A.  Tidak menanyakan informasi pribadi kepada responden</label><br>
+            <label><input type="radio" name="soal10" value="b"> B.  Tidak boleh ada paksaan kepada responden untuk merespon survei</label><br>
+            <label><input type="radio" name="soal10" value="c"> C.  Tidak boleh ada penyampaian yang salah dalam melaporkan data</label><br>
+            <label><input type="radio" name="soal10" value="d"> D.  Memperlakukan informasi yang diberikan responden dengan memegang</label><br>
+            <label><input type="radio" name="soal10" value="e"> E.  Menayakan hal hal yang bersifat pribadi</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+            <p>11.  Cara untuk mengatur dan menyimpan data sehingga mudah diakses dan dimanipulasi merupakan pengertian dari<br>
+            <label><input type="radio" name="soal11" value="a"> A.  Data</label><br>
+            <label><input type="radio" name="soal11" value="b"> B.  Validitas data</label><br>
+            <label><input type="radio" name="soal11" value="c"> C.  Algoritma</label><br>
+            <label><input type="radio" name="soal11" value="d"> D.  Struktur Data</label><br>
+            <label><input type="radio" name="soal11" value="e"> E.   Fakta</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+            <p>12.  Ada banyak jenis struktur data, beberapa yang paling umum adalah array, linked list, stack, queue, tree, graph, dan hash table. Pemilihan struktur data yang tepat bergantung pada kebutuhan program. Dibawah ini pernyataan yang tidak sesuai adalah<br>
+            <label><input type="radio" name="soal12" value="a"> A.  Array adalah Koleksi data yang terurut dengan indeks, seperti daftar siswa dalam kelas.</label><br>
+            <label><input type="radio" name="soal12" value="b"> B.  Tree : struktur data yang terdiri atas kumpulan data  dimana tiap-tiap data menyimpan nilai</label><br>
+            <label><input type="radio" name="soal12" value="c"> C.  Linked List : Koleksi data yang dihubungkan dengan pointer, seperti daftar lagu dalam playlist.</label><br>
+            <label><input type="radio" name="soal12" value="d"> D.   Stack : Struktur data LIFO (Last In First Out), seperti tumpukan piring di meja.</label><br>
+            <label><input type="radio" name="soal12" value="e"> E.  Quee : Struktur data FIFO (First In First Out), seperti antrian di kasir.</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+          <p>13.    Struktur data membantu mengatur data secara efisien, meningkatkan kinerja program, dan membuatnya lebih mudah dipahami dan dipelihara. Dibawah ini pernyataan yang tidak sesuai adalah<br>
+            <label><input type="radio" name="soal13" value="a"> A.  Struktur data akan memudahkan pengguna dalam menyimpan maupun mengatur data secara lebih efisien dan terorganisir.</label><br>
+            <label><input type="radio" name="soal13" value="b"> B.  Struktur data  bisa digunakan untuk membuat sebuah perintah dengan menggunakan bahasa pemrograman yang lebih mudah</label><br>
+            <label><input type="radio" name="soal13" value="c"> C.  Struktur data  bisa meningkatkan efektivitas algoritma menjadi lebih baik</label><br>
+            <label><input type="radio" name="soal13" value="d"> D.  Struktur data  mampu mengatur sumber daya serta layanan di dalam sistem operasi</label><br>
+            <label><input type="radio" name="soal13" value="e"> E.  Struktur data mampu menampung memori yang besar dan tak terbatas.</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+          <p>14.    Suatu langkah pemecahan masalah yang di buat berdasarkan logika dan perhitungan matematis merupakan pengertian dari<br>
+            <label><input type="radio" name="soal14" value="a"> A.  Logika</label><br>
+            <label><input type="radio" name="soal14" value="b"> B.  Algoritma</label><br>
+            <label><input type="radio" name="soal14" value="c"> C.  definisi pseudocode</label><br>
+            <label><input type="radio" name="soal14" value="d"> D.  Pseudocode</label><br>
+            <label><input type="radio" name="soal14" value="e"> E.  Flow Chart.</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+          <p>15.    Metode yang digunakan dalam membuat mie rebus harus bisa mengurutkan langkah-langkah secara logis, berurutan, teratur, mudah, dan rinci mulai dari proses awal pembuatan sampai dengan proses penyajiannya agar mudah dipahami oleh orang lain. Hal termasuk termasuk teknik<br>
+            <label><input type="radio" name="soal15" value="a"> A.  Decomposition</label><br>
+            <label><input type="radio" name="soal15" value="b"> B.  Pattern recognition</label><br>
+            <label><input type="radio" name="soal15" value="c"> C.  Abstraction</label><br>
+            <label><input type="radio" name="soal15" value="d"> D.  Aljabar</label><br>
+            <label><input type="radio" name="soal15" value="e"> E.  Semua salah</label><br>
+            </p>
+        </div>
+
+        <div class="soal">
+          <p>16.    Arti Simbol Flow Chart disamping adalah  <br>
+            <img class="soal-image" src="C:\Users\Asus\OneDrive\Documents\Projek-web\gambar\16.JPG"> <br>
+            <label><input type="radio" name="soal16" value="a"> A.  Proses Operasional</label><br>
+            <label><input type="radio" name="soal16" value="b"> B.  Arah alur dalamkonsep</label><br>
+            <label><input type="radio" name="soal16" value="c"> C.  Awal / akhir konsep (Prosedur)</label><br>
+            <label><input type="radio" name="soal16" value="d"> D.  Dokumen atau laporan berupa prin out</label><br>
+            <label><input type="radio" name="soal16" value="e"> E.  Semua salah</label><br>
+            </p>
+        </div>
+
+
+        <div class="soal">
+          <p>17.    Lengkapi simbol flow chart yang kosong  <br>
+            <img class="soal-image" src="C:\Users\Asus\OneDrive\Documents\Projek-web\gambar\17.JPG"> <br>
+            <label><input type="radio" name="soal17" value="a"> A.  Luas 1/2 *(alas*tinggi) </label><br>
+            <label><input type="radio" name="soal17" value="b"> B.  Luas S*4</label><br>
+            <label><input type="radio" name="soal17" value="c"> C.  Luas Panjang*lebar</label><br>
+            <label><input type="radio" name="soal17" value="d"> D.  Luas alas*tinggi</label><br>
+            <label><input type="radio" name="soal17" value="e"> E.  Luas ½*(d1*d2)</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+          <p>18.    Dalam menyusun suatu program,langkah pertama yang harus di lakkukan adalah  <br>
+            <label><input type="radio" name="soal18" value="a"> A.  Membuat program </label><br>
+            <label><input type="radio" name="soal18" value="b"> B.  Membuat Algoritma</label><br>
+            <label><input type="radio" name="soal18" value="c"> C.  Membeli komputer</label><br>
+            <label><input type="radio" name="soal18" value="d"> D.  Proses</label><br>
+            <label><input type="radio" name="soal18" value="e"> E.  Mempelajari program</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+          <p>19.    Penemu Algoritma ialah Abu Ja`far Muhammad Ibnu Musa Al-Khawarizmi, seorang pakar dalam bidang geografi, astrologi, astronomi dan matematika.Dimana beliau lahir  <br>
+            <label><input type="radio" name="soal19" value="a"> A.  Khwarezmia </label><br>
+            <label><input type="radio" name="soal19" value="b"> B.  Kazaktan</label><br>
+            <label><input type="radio" name="soal19" value="c"> C.  Columbia</label><br>
+            <label><input type="radio" name="soal19" value="d"> D.  Arab Saudi</label><br>
+            <label><input type="radio" name="soal19" value="e"> E.  Persia</label><br>
+            </p>
+        </div>
+
+         <div class="soal">
+          <p>20.    Pseudocode yang di gunakan pada penulisan algoritma berupa  <br>
+            <label><input type="radio" name="soal20" value="a"> A.   Bahasa Inggris </label><br>
+            <label><input type="radio" name="soal20" value="b"> B.   Bahasa puitis</label><br>
+            <label><input type="radio" name="soal20" value="c"> C.   Bahasa Pemrograman</label><br>
+            <label><input type="radio" name="soal20" value="d"> D.   Bahasa Mesin</label><br>
+            <label><input type="radio" name="soal20" value="e"> E.   Bahasa terstruktur</label><br>
+            </p>
+        </div>
+
+        <button onclick="submitExam()">Kirim Ujian</button>
+
+
+    </div>
+
+    <!-- Hasil Ujian -->
+    <div class="form-section" id="hasil"></div>
+
+    <script src="script.js"></script><!-- Include js -->
+
+</body>
+</html>
