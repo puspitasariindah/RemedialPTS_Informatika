@@ -26,16 +26,16 @@ function pilihKelas() {
             { noAbsen: 13, nama: 'HIBBAN AHMAD IBRAHIM' },
             { noAbsen: 14, nama: 'IMTINAN NUHA QANITA RAFIFAH' },
             { noAbsen: 15, nama: 'KENTARO ANDI RAFIF' },
-            { noAbsen: 16, nama: 'LUTFI ANA FITRI AINURRAHNA },
+            { noAbsen: 16, nama: 'LUTFI ANA FITRI AINURRAHNA' },
             { noAbsen: 17, nama: 'MUHAMMAD ABDUL HAFIZ' },
-            { noAbsen: 18, nama: 'MUHAMMAD ADRI ALFARIZI },
+            { noAbsen: 18, nama: 'MUHAMMAD ADRI ALFARIZI' },
             { noAbsen: 19, nama: 'MUHAMMAD FACHRI HIBRIZI' },
             { noAbsen: 20, nama: 'MUHAMMAD KHAVI ILHAM' },
             { noAbsen: 21, nama: 'NAFISAH SYARIFAH WIDYADHANA' },
             { noAbsen: 22, nama: 'NAILA DESTYANA ALYSA' },
             { noAbsen: 23, nama: 'NAILA SAFIRA' },
             { noAbsen: 24, nama: 'NAJLA DALILAH ENDARSYAH' },
-            { noAbsen: 25, nama: 'NATHASYA CORNELIA NUR'IMAN' },
+            { noAbsen: 25, nama: 'NATHASYA CORNELIA NUR IMAN' },
             { noAbsen: 26, nama: 'NAYLA PUTRI LESTARI' },
             { noAbsen: 27, nama: 'NOVIANI PUTRI' },
             { noAbsen: 28, nama: 'PRINCE MUHAMMAD ALFAREZA' },
@@ -79,12 +79,12 @@ function pilihKelas() {
             { noAbsen: 28, nama: 'REISYA PRAJNA ARAMITA' },
             { noAbsen: 29, nama: 'RESTI ELVINA DAMAYANTI' },
             { noAbsen: 30, nama: 'RATU SYARAH SHAFYRA RIZQIN' },
-            { noAbsen: 31, nama: 'RIKA HALIMATU SA'DIYAH' },
+            { noAbsen: 31, nama: 'RIKA HALIMATU SA DIYAH' },
             { noAbsen: 32, nama: 'SABRINA HAFIZA PUTRI' },
             { noAbsen: 33, nama: 'SAVIRA MEDINA PUTRI' },
             { noAbsen: 34, nama: 'SYAHDANURASIK FATHIR QUDRATILLAH' },
             { noAbsen: 35, nama: 'ZAHRA AULIA AHMAD' },
-            { noAbsen: 36, nama: 'ZAHRA OKTAVIA }
+            { noAbsen: 36, nama: 'ZAHRA OKTAVIA' }
             ]
     };
 
