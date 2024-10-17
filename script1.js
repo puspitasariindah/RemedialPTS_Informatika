@@ -10,81 +10,82 @@ function pilihKelas() {
     siswaDropdown.innerHTML = '<option value="" disabled selected>Pilih Nama Siswa</option>';
 
 const siswaData = {
-        "10 RPL A": [
-            { noAbsen: 1, nama: 'AIDAH MEYTRI UTAMI' },
-            { noAbsen: 2, nama: 'ANDIKA SATRIO PERMANA' },
-            { noAbsen: 3, nama: 'ANNISA INDRI NOVIYANTI' },
-            { noAbsen: 4, nama: 'BANYU BANING PUTRA NUGRAHA' },
-            { noAbsen: 5, nama: 'BINTANG PRATAMA' },
-            { noAbsen: 6, nama: 'CALLYSTA SHAFAA PUTRI AFIANTO' },
-            { noAbsen: 7, nama: 'CARRISA PUTRI RAHMADHANI' },
-            { noAbsen: 8, nama: 'DIVINA KHANZA NADHIVA ANDIRYL' },
-            { noAbsen: 9, nama: 'DZAKY ALMER JAMAIL' },
-            { noAbsen: 10, nama: 'FAKHIH SAIFAN' },
-            { noAbsen: 11, nama: 'GUSTI PRATAMA ADNI' },
-            { noAbsen: 12, nama: 'HAYDEN FERANDY' },
-            { noAbsen: 13, nama: 'HIBBAN AHMAD IBRAHIM' },
-            { noAbsen: 14, nama: 'IMTINAN NUHA QANITA RAFIFAH' },
-            { noAbsen: 15, nama: 'KENTARO ANDI RAFIF' },
-            { noAbsen: 16, nama: 'LUTFI ANA FITRI AINURRAHNA },
-            { noAbsen: 17, nama: 'MUHAMMAD ABDUL HAFIZ' },
-            { noAbsen: 18, nama: 'MUHAMMAD ADRI ALFARIZI },
-            { noAbsen: 19, nama: 'MUHAMMAD FACHRI HIBRIZI' },
-            { noAbsen: 20, nama: 'MUHAMMAD KHAVI ILHAM' },
-            { noAbsen: 21, nama: 'NAFISAH SYARIFAH WIDYADHANA' },
-            { noAbsen: 22, nama: 'NAILA DESTYANA ALYSA' },
-            { noAbsen: 23, nama: 'NAILA SAFIRA' },
-            { noAbsen: 24, nama: 'NAJLA DALILAH ENDARSYAH' },
-            { noAbsen: 25, nama: 'NATHASYA CORNELIA NUR'IMAN' },
-            { noAbsen: 26, nama: 'NAYLA PUTRI LESTARI' },
-            { noAbsen: 27, nama: 'NOVIANI PUTRI' },
-            { noAbsen: 28, nama: 'PRINCE MUHAMMAD ALFAREZA' },
-            { noAbsen: 29, nama: 'RAYA ALTAF HUSAIN' },
-            { noAbsen: 30, nama: 'REYZA TRI JULIANI' },
-            { noAbsen: 31, nama: 'REZA BUDI KURNIAWAN' },
-            { noAbsen: 32, nama: 'SAFIRA TRI APRILIA' },
-            { noAbsen: 33, nama: 'SOLEFAH AJI MUSTIKA' },
-            { noAbsen: 34, nama: 'SYARIF KHOIRUL RIFA' },
-            { noAbsen: 35, nama: 'TENGKU AHMAD ABID KHOIRI' },
-            { noAbsen: 36, nama: 'TYAGA AXELLATIO FATHIRIZQI APRIYANTO' }
+        "11 RPL A": [
+            { noAbsen: 1, nama: 'ADINDA SYAHILA' },
+            { noAbsen: 2, nama: 'ADRYAN PRATAMA' },
+            { noAbsen: 3, nama: 'AGUNG ATHAULLAH RADJAK' },
+            { noAbsen: 4, nama: 'AHMAD ILYAS DESSAR RUKMANA' },
+            { noAbsen: 5, nama: 'AMELIA PUTRI' },
+            { noAbsen: 6, nama: 'ANISA TRI OKTAVIA' },
+            { noAbsen: 7, nama: 'AULIA PUTRI' },
+            { noAbsen: 8, nama: 'AZKA FATHUR RAHMAN' },
+            { noAbsen: 9, nama: 'BAGINDA MUJAHID FAJAR .S .R' },
+            { noAbsen: 10, nama: 'CARISSA AUREL LIDRA' },
+            { noAbsen: 11, nama: 'EKA FEBRIANTI' },
+            { noAbsen: 12, nama: 'ELIANUR FAJRIYANI' },
+            { noAbsen: 13, nama: 'FARID INDRAWAN' },
+            { noAbsen: 14, nama: 'GHADIES NOORHAYATI SUBRATA' },
+            { noAbsen: 15, nama: 'GHATFAN GALIHANDRI' },
+            { noAbsen: 16, nama: 'IRGI ATTALA RAMADHAN' },
+            { noAbsen: 17, nama: 'I ZAZ RAMDHANY' },
+            { noAbsen: 18, nama: 'JAUZA AKRAM WIBAWA ATMADJA' },
+            { noAbsen: 19, nama: 'M.AKMAL FALAH' },
+            { noAbsen: 20, nama: 'MATHILDA ANNEKE WAWORUNTU' },
+            { noAbsen: 21, nama: 'MOCHAMMAD ZAKY AL - ANSHORY' },
+            { noAbsen: 22, nama: 'MUHAMAD AL ZAHLFAN WIRANTO' },
+            { noAbsen: 23, nama: 'MUHAMMAD AGHNA SIMAMORA' },
+            { noAbsen: 24, nama: 'MUHAMMAD FIQRIANSYAH AKBAR' },
+            { noAbsen: 25, nama: 'MUHAMMAD IKHSAN DZUL HANNAN' },
+            { noAbsen: 26, nama: 'NABILA SYIFA HARAHAP' },
+            { noAbsen: 27, nama: 'ARASYA FALQI GANI' },
+            { noAbsen: 28, nama: 'RATNA MUTU MANIKAM' },
+            { noAbsen: 29, nama: 'RIFFAT AMILIN HAWARI' },
+            { noAbsen: 30, nama: 'RIZKY SAPUTRO' },
+            { noAbsen: 31, nama: 'SELVIANA RAMADANI' },
+            { noAbsen: 32, nama: 'SENA AJI RAMAWIJAYA' },
+            { noAbsen: 33, nama: 'SHAKILA PUTRI MAISYA' },
+            { noAbsen: 34, nama: 'TAMAM ALIFIAN' },
+            { noAbsen: 35, nama: 'ZAHRA PUTRI ISNAINI' },
+            { noAbsen: 36, nama: 'ZIDANE FAHKRY MYLAN' }
+                            
         ],
-        "10 RPL B": [
-            { noAbsen: 1, nama: 'AHMAD SATRIA HASUGIAN' },
-            { noAbsen: 2, nama: 'ALTHAMIRA AURELI HIDAYAT' },
-            { noAbsen: 3, nama: 'AMIRA NAIFA JANNAH' },
-            { noAbsen: 4, nama: 'ANDHIKA ATHALLAH PUTRA DARSONO' },
-            { noAbsen: 5, nama: 'AULIA NURAINI' },
-            { noAbsen: 6, nama: 'AYESHA CHANDANI' },
-            { noAbsen: 7, nama: 'BAGAS SETIAWAN' },
-            { noAbsen: 8, nama: 'FAIZ ALBARK' },
-            { noAbsen: 9, nama: 'FITRIANISYA AZZAHRA R' },
-            { noAbsen: 10, nama: 'GANIS ALYA KIRANA PUTRI' },
-            { noAbsen: 11, nama: 'HAIKAL ANANDA MUZAQI' },
-            { noAbsen: 12, nama: 'HARIS ADRIAN RAMADHANI' },
-            { noAbsen: 13, nama: 'I GEDE MADE RAYI DARSANAPARIGA' },
-            { noAbsen: 14, nama: 'MALSYAZIA NAOMI ZHAFIRA' },
-            { noAbsen: 15, nama: 'MELDA ALTAMIRA' },
-            { noAbsen: 16, nama: 'MIFTAKHUL JANAH' },
-            { noAbsen: 17, nama: 'MUHAMAD NAWFAL HAKIM' },
-            { noAbsen: 18, nama: 'MUHAMMAD FAJRI' },
-            { noAbsen: 19, nama: 'MUHAMMAD FIKRI' },
-            { noAbsen: 20, nama: 'MUHAMMAD REVAN ADZANUAR' },
-            { noAbsen: 21, nama: 'NAYZILLA PRAMESWARI' },
-            { noAbsen: 22, nama: 'PEDROSA SIMANJUNTAK' },
-            { noAbsen: 23, nama: 'PUTRI RIZQI FAUZIAH' },
-            { noAbsen: 24, nama: 'QAISER GENTZA ABYAZ' },
-            { noAbsen: 25, nama: 'RAAFI HASBI ASSIDIQI' },
-            { noAbsen: 26, nama: 'RAZIF ARBA PERMANA' },
-            { noAbsen: 27, nama: 'REGITA AULIA PUTRI' },
-            { noAbsen: 28, nama: 'REISYA PRAJNA ARAMITA' },
-            { noAbsen: 29, nama: 'RESTI ELVINA DAMAYANTI' },
+        "11 RPL B": [
+            { noAbsen: 1, nama: 'ACHMAD HAIDAR MAGHRABI' },
+            { noAbsen: 2, nama: 'ALAYSA IRVANY' },
+            { noAbsen: 3, nama: 'ALLISA DITA SYAFIRA' },
+            { noAbsen: 4, nama: 'AMANDA ROSIKI BARINGBING' },
+            { noAbsen: 5, nama: 'ANNISA RAMADHANI' },
+            { noAbsen: 6, nama: 'AUFA FARIDATUN NIKMAH' },
+            { noAbsen: 7, nama: 'DAMAR RHAMADAN WARDIANTO' },
+            { noAbsen: 8, nama: 'DWI SEFTI FAUZIA' },
+            { noAbsen: 9, nama: 'FADHIL MACHYA RABBANI' },
+            { noAbsen: 10, nama: 'FARREL ALI RIFALDO' },
+            { noAbsen: 11, nama: 'FATHAN ABDUL MALIK' },
+            { noAbsen: 12, nama: 'FATTYAH RADIN KAYLA' },
+            { noAbsen: 13, nama: 'GALANG RAKA SIWA' },
+            { noAbsen: 14, nama: 'GHINA SALSABILA' },
+            { noAbsen: 15, nama: 'GLADIOR ALEXANDER ROSE' },
+            { noAbsen: 16, nama: 'HANDIKA' },
+            { noAbsen: 17, nama: 'HIRTO E TAMAMEKENG' },
+            { noAbsen: 18, nama: 'KEISHA ANIRIA RAMADHANI' },
+            { noAbsen: 19, nama: 'KENZIE YASIR ARRAFI' },
+            { noAbsen: 20, nama: 'MICHAEL TEGUH CARLO SIMBOLON' },
+            { noAbsen: 21, nama: 'MOHAMAD FADLY FAIRUS' },
+            { noAbsen: 22, nama: 'MUFID IBRAHIM' },
+            { noAbsen: 23, nama: 'MUHAMMAD ERYAN' },
+            { noAbsen: 24, nama: 'MUHAMMAD NADHIF HAKIM' },
+            { noAbsen: 25, nama: 'NANDA ANTIKA' },
+            { noAbsen: 26, nama: 'NISRINA ALIFYA PUTRI YUNI YANTO' },
+            { noAbsen: 27, nama: 'PUTRI AISYAH DWIJANTI' },
+            { noAbsen: 28, nama: 'QATRUNADA AZURA QORISU' },
+            { noAbsen: 29, nama: 'RATU AFIFAH SYAHBRINA' },
             { noAbsen: 30, nama: 'RATU SYARAH SHAFYRA RIZQIN' },
-            { noAbsen: 31, nama: 'RIKA HALIMATU SA'DIYAH' },
-            { noAbsen: 32, nama: 'SABRINA HAFIZA PUTRI' },
-            { noAbsen: 33, nama: 'SAVIRA MEDINA PUTRI' },
-            { noAbsen: 34, nama: 'SYAHDANURASIK FATHIR QUDRATILLAH' },
-            { noAbsen: 35, nama: 'ZAHRA AULIA AHMAD' },
-            { noAbsen: 36, nama: 'ZAHRA OKTAVIA }
+            { noAbsen: 31, nama: 'RAYNALDO RAHMAT SUHARYONO' },
+            { noAbsen: 32, nama: 'RIZA FAHRUL IKHSAN' },
+            { noAbsen: 33, nama: 'SANABILA ZAHRA' },
+            { noAbsen: 34, nama: 'ZAHRA SHAFIYYAH PUTRI' },
+            { noAbsen: 35, nama: 'ZAHROTUS SYIFA' },
+            { noAbsen: 36, nama: 'ZALFA NABILA PUTRI' }
         ]
     };
 
@@ -133,7 +134,7 @@ function startExam() {
         document.getElementById('timerSection').style.display = 'block';
 
         // Mulai timer
-        startTimer(2700); // 45 menit (2700 detik)
+        startTimer(1200); // 1 jam (1200 detik)
 
         // Catat waktu mulai
         waktuMulai = new Date();
@@ -148,25 +149,12 @@ function startExam() {
 function calculateScore() {
     const jawabanBenar = {
         soal1: 'c',
-        soal2: 'b',
-        soal3: 'e',
-        soal4: 'b',
-        soal5: 'e',
-        soal6: 'e',
-        soal7: 'c',
-        soal8: 'c',
-        soal9: 'e',
-        soal10: 'e',
-        soal11: 'd',
-        soal12: 'b',
-        soal13: 'e',
-        soal14: 'b',
-        soal15: 'e',
-        soal16: 'c',
-        soal17: 'a',
-        soal18: 'b',
-        soal19: 'a',
-        soal20: 'c'
+        soal2: 'a',
+        soal3: 'b',
+        soal4: 'a',
+        soal5: 'c',
+        soal6: 'b',
+        soal7: 'c'
     };
     
     let score = 0;
@@ -248,7 +236,6 @@ function kirimKeGoogleForms(score) {
         alert("Terjadi kesalahan saat mengirim data.");
     });
 }
-
 
 
 
