@@ -9,47 +9,47 @@ function pilihKelas() {
     // Reset opsi nama siswa
     siswaDropdown.innerHTML = '<option value="" disabled selected>Pilih Nama Siswa</option>';
 
-const siswaData = {
-    "10 RPL A": [
-        { noAbsen: 1, nama: 'AIDAH MEYTRI UTAMI' },
-        { noAbsen: 2, nama: 'ANDIKA SATRIO PERMANA' },
-        { noAbsen: 3, nama: 'ANNISA INDRI NOVIYANTI' },
-        { noAbsen: 4, nama: 'BANYU BANING PUTRA NUGRAHA' },
-        { noAbsen: 5, nama: 'BINTANG PRATAMA' },
-        { noAbsen: 6, nama: 'CALLYSTA SHAFAA PUTRI AFIANTO' },
-        { noAbsen: 7, nama: 'CARRISA PUTRI RAHMADHANI' },
-        { noAbsen: 8, nama: 'DIVINA KHANZA NADHIVA ANDIRYL' },
-        { noAbsen: 9, nama: 'DZAKY ALMER JAMAIL' },
-        { noAbsen: 10, nama: 'FAKHIH SAIFAN' },
-        { noAbsen: 11, nama: 'GUSTI PRATAMA ADNI' },
-        { noAbsen: 12, nama: 'HAYDEN FERANDY' },
-        { noAbsen: 13, nama: 'HIBBAN AHMAD IBRAHIM' },
-        { noAbsen: 14, nama: 'IMTINAN NUHA QANITA RAFIFAH' },
-        { noAbsen: 15, nama: 'KENTARO ANDI RAFIF' },
-        { noAbsen: 16, nama: 'LUTFI ANA FITRI AINURRAHNA },
-        { noAbsen: 17, nama: 'MUHAMMAD ABDUL HAFIZ' },
-        { noAbsen: 18, nama: 'MUHAMMAD ADRI ALFARIZI },
-        { noAbsen: 19, nama: 'MUHAMMAD FACHRI HIBRIZI' },
-        { noAbsen: 20, nama: 'MUHAMMAD KHAVI ILHAM' },
-        { noAbsen: 21, nama: 'NAFISAH SYARIFAH WIDYADHANA' },
-        { noAbsen: 22, nama: 'NAILA DESTYANA ALYSA' },
-        { noAbsen: 23, nama: 'NAILA SAFIRA' },
-        { noAbsen: 24, nama: 'NAJLA DALILAH ENDARSYAH' },
-        { noAbsen: 25, nama: 'NATHASYA CORNELIA NUR'IMAN' },
-        { noAbsen: 26, nama: 'NAYLA PUTRI LESTARI' },
-        { noAbsen: 27, nama: 'NOVIANI PUTRI' },
-        { noAbsen: 28, nama: 'PRINCE MUHAMMAD ALFAREZA' },
-        { noAbsen: 29, nama: 'RAYA ALTAF HUSAIN' },
-        { noAbsen: 30, nama: 'REYZA TRI JULIANI' },
-        { noAbsen: 31, nama: 'REZA BUDI KURNIAWAN' },
-        { noAbsen: 32, nama: 'SAFIRA TRI APRILIA' },
-        { noAbsen: 33, nama: 'SOLEFAH AJI MUSTIKA' },
-        { noAbsen: 34, nama: 'SYARIF KHOIRUL RIFA' },
-        { noAbsen: 35, nama: 'TENGKU AHMAD ABID KHOIRI' },
-        { noAbsen: 36, nama: 'TYAGA AXELLATIO FATHIRIZQI APRIYANTO' }
-        ],
-    "10 RPL B": [
-            { noAbsen:1, nama: 'AHMAD SATRIA HASUGIAN' },
+     const siswaData = {
+        "10 RPL A": [
+            { noAbsen: 1, nama: 'AIDAH MEYTRI UTAMI' },
+            { noAbsen: 2, nama: 'ANDIKA SATRIO PERMANA' },
+            { noAbsen: 3, nama: 'ANNISA INDRI NOVIYANTI' },
+            { noAbsen: 4, nama: 'BANYU BANING PUTRA NUGRAHA' },
+            { noAbsen: 5, nama: 'BINTANG PRATAMA' },
+            { noAbsen: 6, nama: 'CALLYSTA SHAFAA PUTRI AFIANTO' },
+            { noAbsen: 7, nama: 'CARRISA PUTRI RAHMADHANI' },
+            { noAbsen: 8, nama: 'DIVINA KHANZA NADHIVA ANDIRYL' },
+            { noAbsen: 9, nama: 'DZAKY ALMER JAMAIL' },
+            { noAbsen: 10, nama: 'FAKHIH SAIFAN' },
+            { noAbsen: 11, nama: 'GUSTI PRATAMA ADNI' },
+            { noAbsen: 12, nama: 'HAYDEN FERANDY' },
+            { noAbsen: 13, nama: 'HIBBAN AHMAD IBRAHIM' },
+            { noAbsen: 14, nama: 'IMTINAN NUHA QANITA RAFIFAH' },
+            { noAbsen: 15, nama: 'KENTARO ANDI RAFIF' },
+            { noAbsen: 16, nama: 'LUTFI ANA FITRI AINURRAHNA },
+            { noAbsen: 17, nama: 'MUHAMMAD ABDUL HAFIZ' },
+            { noAbsen: 18, nama: 'MUHAMMAD ADRI ALFARIZI },
+            { noAbsen: 19, nama: 'MUHAMMAD FACHRI HIBRIZI' },
+            { noAbsen: 20, nama: 'MUHAMMAD KHAVI ILHAM' },
+            { noAbsen: 21, nama: 'NAFISAH SYARIFAH WIDYADHANA' },
+            { noAbsen: 22, nama: 'NAILA DESTYANA ALYSA' },
+            { noAbsen: 23, nama: 'NAILA SAFIRA' },
+            { noAbsen: 24, nama: 'NAJLA DALILAH ENDARSYAH' },
+            { noAbsen: 25, nama: 'NATHASYA CORNELIA NUR'IMAN' },
+            { noAbsen: 26, nama: 'NAYLA PUTRI LESTARI' },
+            { noAbsen: 27, nama: 'NOVIANI PUTRI' },
+            { noAbsen: 28, nama: 'PRINCE MUHAMMAD ALFAREZA' },
+            { noAbsen: 29, nama: 'RAYA ALTAF HUSAIN' },
+            { noAbsen: 30, nama: 'REYZA TRI JULIANI' },
+            { noAbsen: 31, nama: 'REZA BUDI KURNIAWAN' },
+            { noAbsen: 32, nama: 'SAFIRA TRI APRILIA' },
+            { noAbsen: 33, nama: 'SOLEFAH AJI MUSTIKA' },
+            { noAbsen: 34, nama: 'SYARIF KHOIRUL RIFA' },
+            { noAbsen: 35, nama: 'TENGKU AHMAD ABID KHOIRI' },
+            { noAbsen: 36, nama: 'TYAGA AXELLATIO FATHIRIZQI APRIYANTO' }
+            ],
+        "10 RPL B": [
+            { noAbsen: 1, nama: 'AHMAD SATRIA HASUGIAN' },
             { noAbsen: 2, nama: 'ALTHAMIRA AURELI HIDAYAT' },
             { noAbsen: 3, nama: 'AMIRA NAIFA JANNAH' },
             { noAbsen: 4, nama: 'ANDHIKA ATHALLAH PUTRA DARSONO' },
@@ -85,7 +85,7 @@ const siswaData = {
             { noAbsen: 34, nama: 'SYAHDANURASIK FATHIR QUDRATILLAH' },
             { noAbsen: 35, nama: 'ZAHRA AULIA AHMAD' },
             { noAbsen: 36, nama: 'ZAHRA OKTAVIA }
-        ]
+            ]
     };
 
 // Tambahkan opsi siswa berdasarkan kelas yang dipilih
@@ -140,7 +140,7 @@ function startExam() {
         
     } else {
         alert("Silahkan pilih kelas dan siswa terlebih dahulu!");
-    }
+        }
 }
 
 
@@ -202,8 +202,6 @@ function submitExam() {
     // Kirim data ke Google Forms
     kirimKeGoogleForms(score);
 }
-
-
 
 // Fungsi untuk mengirim data ke Google Forms
 function kirimKeGoogleForms(score) {
