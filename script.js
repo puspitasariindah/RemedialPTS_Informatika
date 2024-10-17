@@ -148,12 +148,25 @@ function startExam() {
 function calculateScore() {
     const jawabanBenar = {
         soal1: 'c',
-        soal2: 'a',
-        soal3: 'b',
-        soal4: 'a',
-        soal5: 'c',
-        soal6: 'b',
-        soal7: 'c'
+        soal2: 'b',
+        soal3: 'e',
+        soal4: 'b',
+        soal5: 'e',
+        soal6: 'e',
+        soal7: 'c',
+        soal8: 'c',
+        soal9: 'e',
+        soal10: 'e',
+        soal11: 'd',
+        soal12: 'b',
+        soal13: 'e',
+        soal14: 'b',
+        soal15: 'e',
+        soal16: 'c',
+        soal17: 'a',
+        soal18: 'b',
+        soal19: 'a',
+        soal20: 'c'
     };
     
     let score = 0;
