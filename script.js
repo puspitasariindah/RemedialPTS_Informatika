@@ -9,7 +9,7 @@ function pilihKelas() {
     // Reset opsi nama siswa
     siswaDropdown.innerHTML = '<option value="" disabled selected>Pilih Nama Siswa</option>';
 
-     const siswaData = {
+    const siswaData = {
         "10 RPL A": [
             { noAbsen: 1, nama: 'AIDAH MEYTRI UTAMI' },
             { noAbsen: 2, nama: 'ANDIKA SATRIO PERMANA' },
