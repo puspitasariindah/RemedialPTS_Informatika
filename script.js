@@ -181,6 +181,73 @@ function calculateScore() {
     return score;
 }
 
+// Fungsi untuk submit ujian
+function submitExam() {
+    clearInterval(timerInterval); // Hentikan timer
+
+    // Sembunyikan soal
+    document.getElementById('soalSection').style.display = 'none';
+    document.getElementById('timerSection').style.display = 'none';
+
+    // Ambil data
+    const kelas = document.getElementById('kelas').value;
+    const noAbsen = document.getElementById('siswa').value;
+    const nama = document.querySelector(`#siswa option[value='${noAbsen}']`).textContent.split(". ")[1];
+    const waktuSelesaiFormatted = new Date().toLocaleTimeString();
+    const waktuMulaiFormatted = waktuMulai.toLocaleTimeString();
+
+    // Hitung skor
+    const score = calculateScore();
+
+    // Tampilkan hasil
+    document.getElementById('hasil').innerHTML = `
+        <h3>Hasil Ujian</h3>
+        Kelas: ${kelas}<br>
+        No Absen: ${noAbsen} <br>
+        Nama: ${nama}<br>
+        Waktu Mulai: ${waktuMulaiFormatted}<br>
+        Waktu Selesai: ${waktuSelesaiFormatted}<br>
+        Skor: ${score}
+    `;
+
+    document.getElementById('hasil').style.display = 'block';
+
+    // Kirim data ke Google Forms
+    kirimKeGoogleForms(score);
+}
+
+
+
+// Fungsi untuk mengirim data ke Google Forms
+function kirimKeGoogleForms(score) {
+    const kelas = document.getElementById('kelas').value;
+    const noAbsen = document.getElementById('siswa').value;
+    const nama = document.querySelector(`#siswa option[value='${noAbsen}']`).textContent.split(". ")[1];
+
+    const waktuMulaiFormatted = waktuMulai.toLocaleTimeString();
+    const waktuSelesaiFormatted = new Date().toLocaleTimeString();
+
+    const formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxJ0ioEinKEgGchwXCjvU2nGgM2-9xCRptiQLNn6dm6OuitQ/formResponse"; // Ganti dengan URL Google Form Anda
+
+    const data = new FormData();
+    data.append('entry.553520697', kelas);  // Ganti dengan entry ID Kelas
+    data.append('entry.2058714764', nama);  // Ganti dengan entry ID Nama
+    data.append('entry.1476646274', noAbsen);  // Ganti dengan entry ID No Absen
+    data.append('entry.887434112', score);  // Ganti dengan entry ID Skor
+    data.append('entry.2130018600', waktuMulaiFormatted);  // Ganti dengan entry ID Waktu Mulai
+    data.append('entry.610910249', waktuSelesaiFormatted);  // Ganti dengan entry ID Waktu Selesai
+
+    fetch(formURL, {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'  // Agar tidak ada masalah dengan CORS
+    }).then(() => {
+        alert("Hasil ujian Anda telah disimpan.");
+    }).catch(error => {
+        console.error('Error:', error);
+        alert("Terjadi kesalahan saat mengirim data.");
+    });
+}
 
 
 
