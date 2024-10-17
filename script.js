@@ -10,7 +10,7 @@ function pilihKelas() {
     siswaDropdown.innerHTML = '<option value="" disabled selected>Pilih Nama Siswa</option>';
 
 const siswaData = {
-        "10 RPL A": [
+        "11 RPL A": [
             { noAbsen: 1, nama: 'ADINDA SYAHILA' },
             { noAbsen: 2, nama: 'ADRYAN PRATAMA' },
             { noAbsen: 3, nama: 'AGUNG ATHAULLAH RADJAK' },
@@ -49,7 +49,7 @@ const siswaData = {
             { noAbsen: 36, nama: 'ZIDANE FAHKRY MYLAN' }
                             
         ],
-        "10 RPL B": [
+        "11 RPL B": [
             { noAbsen: 1, nama: 'ACHMAD HAIDAR MAGHRABI' },
             { noAbsen: 2, nama: 'ALAYSA IRVANY' },
             { noAbsen: 3, nama: 'ALLISA DITA SYAFIRA' },
@@ -236,7 +236,6 @@ function kirimKeGoogleForms(score) {
         alert("Terjadi kesalahan saat mengirim data.");
     });
 }
-
 
 
 
