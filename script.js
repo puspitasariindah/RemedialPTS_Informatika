@@ -133,7 +133,7 @@ function startExam() {
         document.getElementById('timerSection').style.display = 'block';
 
         // Mulai timer
-        startTimer(1200); // 1 jam (1200 detik)
+        startTimer(2700); // 45 menit (2700 detik)
 
         // Catat waktu mulai
         waktuMulai = new Date();
