@@ -1,135 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujian Online</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Include CSS -->
-</head>
-<body>
+let timerInterval;
+let waktuMulai;
 
-    <h1>Ujian Online</h1>
+// Fungsi untuk memilih kelas
+function pilihKelas() {
+    const kelas = document.getElementById('kelas').value;
+    const siswaDropdown = document.getElementById('siswa');
 
-    <!-- Form untuk No Absen dan Nama Lengkap -->
-    <div class="form-section">
-        <label for="kelas">Kelas:</label>
-        <select id="kelas" onchange="pilihKelas()" required>
-            <option value="" disabled selected>Pilih Kelas</option>
-            <option value="11 RPL A">11 RPL A</option>
-            <option value="11 RPL B">11 RPL B</option>
-        </select>
-        <br><br>
+    // Reset opsi nama siswa
+    siswaDropdown.innerHTML = '<option value="" disabled selected>Pilih Nama Siswa</option>';
 
-        <label for="siswa">Nama Siswa:</label>
-        <select id="siswa" required>
-            <option value="" disabled selected>Pilih Nama Siswa</option>
-        </select>
-        <br><br>
+const siswaData = {
+        "11 RPL A": [
+            { noAbsen: 1, nama: 'ADINDA SYAHILA' },
+            { noAbsen: 2, nama: 'ADRYAN PRATAMA' },
+            { noAbsen: 3, nama: 'AGUNG ATHAULLAH RADJAK' },
+            { noAbsen: 4, nama: 'AHMAD ILYAS DESSAR RUKMANA' },
+            { noAbsen: 5, nama: 'AMELIA PUTRI' },
+            { noAbsen: 6, nama: 'ANISA TRI OKTAVIA' },
+            { noAbsen: 7, nama: 'AULIA PUTRI' },
+            { noAbsen: 8, nama: 'AZKA FATHUR RAHMAN' },
+            { noAbsen: 9, nama: 'BAGINDA MUJAHID FAJAR .S .R' },
+            { noAbsen: 10, nama: 'CARISSA AUREL LIDRA' },
+            { noAbsen: 11, nama: 'EKA FEBRIANTI' },
+            { noAbsen: 12, nama: 'ELIANUR FAJRIYANI' },
+            { noAbsen: 13, nama: 'FARID INDRAWAN' },
+            { noAbsen: 14, nama: 'GHADIES NOORHAYATI SUBRATA' },
+            { noAbsen: 15, nama: 'GHATFAN GALIHANDRI' },
+            { noAbsen: 16, nama: 'IRGI ATTALA RAMADHAN' },
+            { noAbsen: 17, nama: 'I ZAZ RAMDHANY' },
+            { noAbsen: 18, nama: 'JAUZA AKRAM WIBAWA ATMADJA' },
+            { noAbsen: 19, nama: 'M.AKMAL FALAH' },
+            { noAbsen: 20, nama: 'MATHILDA ANNEKE WAWORUNTU' },
+            { noAbsen: 21, nama: 'MOCHAMMAD ZAKY AL - ANSHORY' },
+            { noAbsen: 22, nama: 'MUHAMAD AL ZAHLFAN WIRANTO' },
+            { noAbsen: 23, nama: 'MUHAMMAD AGHNA SIMAMORA' },
+            { noAbsen: 24, nama: 'MUHAMMAD FIQRIANSYAH AKBAR' },
+            { noAbsen: 25, nama: 'MUHAMMAD IKHSAN DZUL HANNAN' },
+            { noAbsen: 26, nama: 'NABILA SYIFA HARAHAP' },
+            { noAbsen: 27, nama: 'ARASYA FALQI GANI' },
+            { noAbsen: 28, nama: 'RATNA MUTU MANIKAM' },
+            { noAbsen: 29, nama: 'RIFFAT AMILIN HAWARI' },
+            { noAbsen: 30, nama: 'RIZKY SAPUTRO' },
+            { noAbsen: 31, nama: 'SELVIANA RAMADANI' },
+            { noAbsen: 32, nama: 'SENA AJI RAMAWIJAYA' },
+            { noAbsen: 33, nama: 'SHAKILA PUTRI MAISYA' },
+            { noAbsen: 34, nama: 'TAMAM ALIFIAN' },
+            { noAbsen: 35, nama: 'ZAHRA PUTRI ISNAINI' },
+            { noAbsen: 36, nama: 'ZIDANE FAHKRY MYLAN' }
+                            
+        ],
+        "11 RPL B": [
+            { noAbsen: 1, nama: 'ACHMAD HAIDAR MAGHRABI' },
+            { noAbsen: 2, nama: 'ALAYSA IRVANY' },
+            { noAbsen: 3, nama: 'ALLISA DITA SYAFIRA' },
+            { noAbsen: 4, nama: 'AMANDA ROSIKI BARINGBING' },
+            { noAbsen: 5, nama: 'ANNISA RAMADHANI' },
+            { noAbsen: 6, nama: 'AUFA FARIDATUN NIKMAH' },
+            { noAbsen: 7, nama: 'DAMAR RHAMADAN WARDIANTO' },
+            { noAbsen: 8, nama: 'DWI SEFTI FAUZIA' },
+            { noAbsen: 9, nama: 'FADHIL MACHYA RABBANI' },
+            { noAbsen: 10, nama: 'FARREL ALI RIFALDO' },
+            { noAbsen: 11, nama: 'FATHAN ABDUL MALIK' },
+            { noAbsen: 12, nama: 'FATTYAH RADIN KAYLA' },
+            { noAbsen: 13, nama: 'GALANG RAKA SIWA' },
+            { noAbsen: 14, nama: 'GHINA SALSABILA' },
+            { noAbsen: 15, nama: 'GLADIOR ALEXANDER ROSE' },
+            { noAbsen: 16, nama: 'HANDIKA' },
+            { noAbsen: 17, nama: 'HIRTO E TAMAMEKENG' },
+            { noAbsen: 18, nama: 'KEISHA ANIRIA RAMADHANI' },
+            { noAbsen: 19, nama: 'KENZIE YASIR ARRAFI' },
+            { noAbsen: 20, nama: 'MICHAEL TEGUH CARLO SIMBOLON' },
+            { noAbsen: 21, nama: 'MOHAMAD FADLY FAIRUS' },
+            { noAbsen: 22, nama: 'MUFID IBRAHIM' },
+            { noAbsen: 23, nama: 'MUHAMMAD ERYAN' },
+            { noAbsen: 24, nama: 'MUHAMMAD NADHIF HAKIM' },
+            { noAbsen: 25, nama: 'NANDA ANTIKA' },
+            { noAbsen: 26, nama: 'NISRINA ALIFYA PUTRI YUNI YANTO' },
+            { noAbsen: 27, nama: 'PUTRI AISYAH DWIJANTI' },
+            { noAbsen: 28, nama: 'QATRUNADA AZURA QORISU' },
+            { noAbsen: 29, nama: 'RATU AFIFAH SYAHBRINA' },
+            { noAbsen: 30, nama: 'RATU SYARAH SHAFYRA RIZQIN' },
+            { noAbsen: 31, nama: 'RAYNALDO RAHMAT SUHARYONO' },
+            { noAbsen: 32, nama: 'RIZA FAHRUL IKHSAN' },
+            { noAbsen: 33, nama: 'SANABILA ZAHRA' },
+            { noAbsen: 34, nama: 'ZAHRA SHAFIYYAH PUTRI' },
+            { noAbsen: 35, nama: 'ZAHROTUS SYIFA' },
+            { noAbsen: 36, nama: 'ZALFA NABILA PUTRI' }
+        ]
+    };
 
-        <button onclick="startExam()">Mulai Ujian</button>
-    </div>
+// Tambahkan opsi siswa berdasarkan kelas yang dipilih
+    if (siswaData[kelas]) {
+        siswaData[kelas].forEach(siswa => {
+            const option = document.createElement('option');
+            option.value = siswa.noAbsen;
+            option.text = `${siswa.noAbsen}. ${siswa.nama}`;
+            siswaDropdown.appendChild(option);
+        });
+    }
+}
 
-    <!-- Timer Section -->
-    <div class="timer-section" id="timerSection" style="display: none;">
-        <h2>Timer: <span id="timer">20:00</span></h2>
-    </div>
+// Fungsi untuk memulai timer
+function startTimer(duration) {
+    let timer = duration, minutes, seconds;
+    timerInterval = setInterval(() => {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-    <!-- Soal Section -->
-    <div class="soal-section" id="soalSection" style="display: none;">
-        <h2>Soal Ujian</h2>
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        <div class="soal">
-            <p>1. Berikut adalah langkah untuk membuat DFD : <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. DFD Level Dua, Tiga, … <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. Buat Diagram Level Satu <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Buat Diagram Level Zero <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. Identifikasi terlebih dahulu semua entitas luar yang terlibat di sistem. <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5. Identifikasi semua input dan output yang terlibat dengan entitas luar. <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 6. Buat Diagram Konteks (diagram context).<br>
-                &nbsp;Urutan yang benar adalah :</p>
-                <label><input type="radio" name="soal1" value="a"> A. 1-2-3-4-5-6</label><br>
-                <label><input type="radio" name="soal1" value="b"> B. 4-5-6-1-2-3</label><br>
-                <label><input type="radio" name="soal1" value="c"> C. 4-5-6-3-2-1</label><br>
-                <label><input type="radio" name="soal1" value="d"> D. 1-4-5-6-2-1</label><br>
-                <label><input type="radio" name="soal1" value="e"> E. 5-1-2-6-4-3</label><br>
-            </p>
-        </div>
+        document.getElementById('timer').textContent = minutes + ":" + seconds;
 
-        <div class="soal"> 
-            <p>2. Diberikan dua tabel berikut dalam basis data universitas:<br>
-                  <img class="soal-image" src="gambar\2.JPG"> <br>
-                <label><input type="radio" name="soal2" value="a"> A. <img src= "gambar\2a.JPG" width="100"/></label><br>
-                <label><input type="radio" name="soal2" value="b"> B. <img src= "gambar\2b.JPG"width="200"/></label><br>
-                <label><input type="radio" name="soal2" value="c"> C. <img src= "gambar\2c.JPG"width="100"/></label><br>
-                <label><input type="radio" name="soal2" value="d"> D. <img src= "gambar\2d.JPG"width="100"/></label><br>
-                <label><input type="radio" name="soal2" value="e"> E. <img src= "gambar\2e.JPG" width="100"/></label><br>
-            </p>
-        </div>
+        if (--timer < 0) {
+            clearInterval(timerInterval);
+            submitExam();
+        }
+    }, 1000);
+}
 
+// Fungsi untuk memulai ujian
+function startExam() {
+    const kelas = document.getElementById('kelas').value;
+    const noAbsen = document.getElementById('siswa').value;
 
-        <div class="soal"> 
-            <p>3. Jenis hubungan apa yang dijelaskan oleh aturan ini? Untuk satu instance dari entitas A,terdapat nol, satu, atau banyak instance dari entitas B; tetapi untuk satu instance dari entitas B, terdapat nol atau satu instance dari entitas A<br>
-            <label><input type="radio" name="soal3" value="a"> A. 1:1 relationship</label><br>
-            <label><input type="radio" name="soal3" value="b"> B. 1:N relationship</label><br>
-            <label><input type="radio" name="soal3" value="c"> C. N:1 relationship</label><br>
-            <label><input type="radio" name="soal3" value="d"> D. M:N relationship</label><br>
-            <label><input type="radio" name="soal3" value="e"> E. 0:N relationship</label><br>
-            </p>
-  
-        </div>
+    if (kelas && noAbsen) {
+        const nama = document.querySelector(`#siswa option[value='${noAbsen}']`).textContent.split(". ")[1];
+        //document.getElementById("examInfo").innerHTML = `Kelas: ${kelas}<br>No Absen: ${noAbsen}<br>Nama: ${nama}`;
 
-        <div class="soal"> 
-            <p>4. Manakah dari berikut ini yang mengacu pada tingkat abstraksi data yang menggambarkan bagaimana data sebenarnya disimpan? <br>
-            <label><input type="radio" name="soal4" value="a"> A. Physical Level</label><br>
-            <label><input type="radio" name="soal4" value="b"> B. Logical Level</label><br>
-            <label><input type="radio" name="soal4" value="c"> C. File Level</label><br>
-            <label><input type="radio" name="soal4" value="d"> D. Conceptual Level</label><br>
-            <label><input type="radio" name="soal4" value="e"> E. Storage Level</label><br>
-            </p>
-        </div>
+        // Sembunyikan form dan tampilkan soal ujian
+        document.querySelector(".form-section").style.display = 'none';
+        document.getElementById("soalSection").style.display = 'block';
+        document.getElementById('timerSection').style.display = 'block';
 
-        <div class="soal">
-            <p>5.  Perhatikan gambar.<br>
-                <img class="soal-image" src="gambar/5.JPG"> <br>
-                Pernyataan berikut mana yang salah mengenai kunci dalam basis data relasional…<br>
-            <label><input type="radio" name="soal5" value="a"> A. Hanya boleh ada satu kunci utama di setiap tabel</label><br>
-            <label><input type="radio" name="soal5" value="b"> B. Tabel dapat berisi beberapa kunci asing atau tidak ada kunci asing sama sekali</label><br>
-            <label><input type="radio" name="soal5" value="c"> C. Tujuan aturan kunci utama dan aturan kunci asing adalah sama</label><br>
-            <label><input type="radio" name="soal5" value="d"> D. Nilai kunci utama harus unik dan tidak boleh kosong (NULL)</label><br>
-            <label><input type="radio" name="soal5" value="e"> E. Kunci asing digunakan untuk membuat hubungan antar tabel dan menjaga referensial integritas data</label><br>
-            </p>
-        </div>
+        // Mulai timer
+        startTimer(1200); // 1 jam (1200 detik)
 
-        <div class="soal">
-            <p>6. Sebuah perusahaan menggunakan Database Management System (DBMS) untuk mengelola data mereka. DBMS tersebut memiliki beberapa komponen utama yang berperan penting dalam pengelolaan data, termasuk lapisan penyimpanan data, pemrosesan kueri, dan kontrol akses.<br>Komponen DBMS yang menyediakan fasilitas untuk menulis dan mengeksekusi perintah SQL, mengoptimalkan kueri, dan mengambil data sesuai permintaan pengguna, pernyataan ini tepat untuk komponen DBMS…<br>
-            <label><input type="radio" name="soal6" value="a"> A. Lapisan Penyimpanan Data (Storage Layer)</label><br>
-            <label><input type="radio" name="soal6" value="b"> B. Pemrosesan Kueri (Query Processing)</label><br>
-            <label><input type="radio" name="soal6" value="c"> C. Kontrol Akses (Access Control)</label><br>
-            <label><input type="radio" name="soal6" value="d"> D. Pengelola Transaksi (Transaction Manager)</label><br>
-            <label><input type="radio" name="soal6" value="e"> E. Pengelola Buffer (Buffer Manager)</label><br>
-            </p>
-        </div>
-
-         <div class="soal">
-            <p>7.  Sebuah …. adalah kumpulan data terstruktur yang terorganisir.<br>
-            <label><input type="radio" name="soal7" value="a"> A. Information</label><br>
-            <label><input type="radio" name="soal7" value="b"> B. File</label><br>
-            <label><input type="radio" name="soal7" value="c"> C. Database</label><br>
-            <label><input type="radio" name="soal7" value="d"> D. DBMS</label><br>
-            <label><input type="radio" name="soal7" value="e"> E. Salah semua</label><br>
-            </p>
-        </div>
+        // Catat waktu mulai
+        waktuMulai = new Date();
+        
+    } else {
+        alert("Silahkan pilih kelas dan siswa terlebih dahulu!");
+    }
+}
 
 
-        <button onclick="submitExam()">Kirim Ujian</button>
+// Fungsi untuk menghitung skor
+function calculateScore() {
+    const jawabanBenar = {
+        soal1: 'c',
+        soal2: 'a',
+        soal3: 'b',
+        soal4: 'a',
+        soal5: 'c',
+        soal6: 'b',
+        soal7: 'c'
+    };
+    
+    let score = 0;
+
+    for (let soal in jawabanBenar) {
+        const jawabanDipilih = document.querySelector(`input[name="${soal}"]:checked`);
+        if (jawabanDipilih && jawabanDipilih.value === jawabanBenar[soal]) {
+            score += 1;
+        }
+    }
+
+    return score;
+}
+
+// Fungsi untuk submit ujian
+function submitExam() {
+    clearInterval(timerInterval); // Hentikan timer
+
+    // Sembunyikan soal
+    document.getElementById('soalSection').style.display = 'none';
+    document.getElementById('timerSection').style.display = 'none';
+
+    // Ambil data
+    const kelas = document.getElementById('kelas').value;
+    const noAbsen = document.getElementById('siswa').value;
+    const nama = document.querySelector(`#siswa option[value='${noAbsen}']`).textContent.split(". ")[1];
+    const waktuSelesaiFormatted = new Date().toLocaleTimeString();
+    const waktuMulaiFormatted = waktuMulai.toLocaleTimeString();
+
+    // Hitung skor
+    const score = calculateScore();
+
+    // Tampilkan hasil
+    document.getElementById('hasil').innerHTML = `
+        <h3>Hasil Ujian</h3>
+        Kelas: ${kelas}<br>
+        No Absen: ${noAbsen} <br>
+        Nama: ${nama}<br>
+        Waktu Mulai: ${waktuMulaiFormatted}<br>
+        Waktu Selesai: ${waktuSelesaiFormatted}<br>
+        Skor: ${score}
+    `;
+
+    document.getElementById('hasil').style.display = 'block';
+
+    // Kirim data ke Google Forms
+    kirimKeGoogleForms(score);
+}
 
 
-    </div>
 
-    <!-- Hasil Ujian -->
-    <div class="form-section" id="hasil"></div>
+// Fungsi untuk mengirim data ke Google Forms
+function kirimKeGoogleForms(score) {
+    const kelas = document.getElementById('kelas').value;
+    const noAbsen = document.getElementById('siswa').value;
+    const nama = document.querySelector(`#siswa option[value='${noAbsen}']`).textContent.split(". ")[1];
 
-    <script src="script.js"></script><!-- Include js -->
+    const waktuMulaiFormatted = waktuMulai.toLocaleTimeString();
+    const waktuSelesaiFormatted = new Date().toLocaleTimeString();
 
-</body>
-</html>
+    const formURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLScxJ0ioEinKEgGchwXCjvU2nGgM2-9xCRptiQLNn6dm6OuitQ/formResponse"; // Ganti dengan URL Google Form Anda
+
+    const data = new FormData();
+    data.append('entry.553520697', kelas);  // Ganti dengan entry ID Kelas
+    data.append('entry.2058714764', nama);  // Ganti dengan entry ID Nama
+    data.append('entry.1476646274', noAbsen);  // Ganti dengan entry ID No Absen
+    data.append('entry.887434112', score);  // Ganti dengan entry ID Skor
+    data.append('entry.2130018600', waktuMulaiFormatted);  // Ganti dengan entry ID Waktu Mulai
+    data.append('entry.610910249', waktuSelesaiFormatted);  // Ganti dengan entry ID Waktu Selesai
+
+    fetch(formURL, {
+        method: 'POST',
+        body: data,
+        mode: 'no-cors'  // Agar tidak ada masalah dengan CORS
+    }).then(() => {
+        alert("Hasil ujian Anda telah disimpan.");
+    }).catch(error => {
+        console.error('Error:', error);
+        alert("Terjadi kesalahan saat mengirim data.");
+    });
+}
+
+
+
+
+
+
